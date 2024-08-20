@@ -4,7 +4,10 @@ import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,10 +17,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.kotlinprojectloginpage.R
-
+import androidx.navigation.NavHostController
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -67,7 +69,8 @@ fun LoginScreen() {
             label = { Text(text = "Email address") },
             modifier = Modifier
                 .fillMaxWidth(0.9f)  // Ekranın %90'ı kadar genişlik
-                .height(56.dp)  // Sabit yükseklik
+                .height(56.dp),  // Sabit yükseklik
+                shape = RoundedCornerShape(12.dp)  // Köşeleri 12.dp kadar yuvarlat
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -79,7 +82,8 @@ fun LoginScreen() {
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .fillMaxWidth(0.9f)  // Ekranın %90'ı kadar genişlik
-                .height(56.dp)  // Sabit yükseklik
+                .height(56.dp),  // Sabit yükseklik
+            shape = RoundedCornerShape(12.dp)  // Köşeleri 12.dp kadar yuvarlat
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -97,7 +101,9 @@ fun LoginScreen() {
 
         Text(
             text = "Forgot Password?",
-            modifier = Modifier.clickable { /* Forgot Password logic */ },
+            modifier = Modifier.clickable {
+                navController.navigate("passwordReset")
+            },
             fontSize = textSizeForgotPassword
         )
 
