@@ -24,17 +24,20 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun LoginScreen(navController: NavHostController) {
+fun RegisterScreen(navController: NavHostController) {
+    var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp.dp
+    val screenHeight = configuration.screenHeightDp.dp
 
     val textSizeWelcome = 28.sp
     val textSizeLogin = 16.sp
     val textSizeForgotPassword = 14.sp
     val buttonSize = 50.dp
+
 
     Box(
         modifier = Modifier
@@ -52,32 +55,38 @@ fun LoginScreen(navController: NavHostController) {
             )
         }
 
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 48.dp), // Adds space for the back button
+                .padding(top = 48.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.loginpage),
-                contentDescription = "Login image",
+                painter = painterResource(id = R.drawable.register),
+                contentDescription = "Register image",
                 modifier = Modifier.size(screenWidth * 0.5f)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Welcome",
+                text = "Create Your Account",
                 fontSize = textSizeWelcome,
                 fontWeight = FontWeight.Bold
             )
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "Login to your account",
-                fontSize = textSizeLogin
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
+                label = { Text(text = "Name-Surname") },
+                modifier = Modifier
+                    .fillMaxWidth(0.9f)
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -108,27 +117,17 @@ fun LoginScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { Log.i("Credential", "Email: $email Password: $password") },
+                onClick = { Log.i("Register", "Name: $name, Email: $email, Password: $password") },
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .height(buttonSize)
             ) {
-                Text(text = "Login", fontSize = textSizeLogin)
+                Text(text = "Sign Up", fontSize = textSizeLogin)
             }
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "Forgot Password?",
-                modifier = Modifier.clickable {
-                    navController.navigate("passwordReset")
-                },
-                fontSize = textSizeForgotPassword
-            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Or sign in with", fontSize = textSizeForgotPassword)
+            Text(text = "Or sign up with", fontSize = textSizeForgotPassword)
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -137,7 +136,7 @@ fun LoginScreen(navController: NavHostController) {
                 contentDescription = "Google",
                 modifier = Modifier
                     .size(screenWidth * 0.15f)
-                    .clickable { /* Google sign-in logic */ }
+                    .clickable { /* Google sign-up logic */ }
             )
         }
     }

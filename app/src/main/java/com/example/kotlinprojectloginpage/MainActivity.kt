@@ -22,9 +22,11 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "login") {
+                    NavHost(navController = navController, startDestination = "home") { // Set HomeScreen as startDestination
+                        composable("home") { HomeScreen(navController) }
                         composable("login") { LoginScreen(navController) }
                         composable("passwordReset") { PasswordResetScreen(navController) }
+                        composable("register") { RegisterScreen(navController) }
                     }
                 }
             }
