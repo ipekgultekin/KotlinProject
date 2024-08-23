@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavController) {
             )
 
             Text(
-                text = "Welcome to our App.",
+                text = "Welcome to My First App.",
                 fontSize = 16.sp,
                 modifier = Modifier.padding(horizontal = 24.dp),
                 textAlign = TextAlign.Center
