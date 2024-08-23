@@ -11,7 +11,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
 
 @Composable
-fun SuccessScreen(message: String, navController: NavHostController) {
+fun SuccessScreen(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -25,7 +25,7 @@ fun SuccessScreen(message: String, navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = message,
+                text = "Successful!!!",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )

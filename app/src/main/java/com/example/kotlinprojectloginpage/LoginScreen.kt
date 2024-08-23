@@ -103,13 +103,7 @@ fun LoginScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = {
-                    if (email.isNotEmpty() && password.isNotEmpty()) {
-                        navController.navigate("success")
-                    } else {
-                        Log.i("Credential", "Email: $email Password: $password")
-                    }
-                },
+                onClick = { navController.navigate("success") },
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .height(buttonSize),

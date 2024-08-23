@@ -116,13 +116,7 @@ fun RegisterScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = {
-                    if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                        navController.navigate("success")
-                    } else {
-                        Log.i("Register", "Name: $name, Email: $email, Password: $password")
-                    }
-                },
+                onClick = { navController.navigate("success") },
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .height(buttonSize),

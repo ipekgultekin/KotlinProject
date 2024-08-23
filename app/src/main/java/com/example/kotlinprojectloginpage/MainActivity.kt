@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                         composable("login") { LoginScreen(navController) }
                         composable("passwordReset") { PasswordResetScreen(navController) }
                         composable("register") { RegisterScreen(navController) }
-                        composable("success") { SuccessScreen("Operation successful!", navController) }
+                        composable("success") { SuccessScreen(navController) }
 
                     }
                 }
