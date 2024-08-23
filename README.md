@@ -17,10 +17,14 @@ Android Studio: The IDE used for the development of the project.
 
 
 # Screenshots
-![Screenshot_20240823_171130](https://github.com/user-attachments/assets/df454fa5-d05a-4dc3-bfde-1563840a26d5)
+<p align="center">
+  <img src="![Screenshot_20240823_171130](https://github.com/user-attachments/assets/df454fa5-d05a-4dc3-bfde-1563840a26d5)" alt="Home Screen" width="200"/>
+  <img src="![Screenshot_20240823_171144](https://github.com/user-attachments/assets/a4912a98-02ed-4471-a45e-a8206f6afa60)="Login Screen" width="200"/>
+  <img src="![Screenshot_20240823_171216](https://github.com/user-attachments/assets/d7f26fef-9562-4df0-b04e-32e7b4db9fd5)" alt="Register Screen" width="200"/>
+</p>
 
 
-![Screenshot_20240823_171144](https://github.com/user-attachments/assets/a4912a98-02ed-4471-a45e-a8206f6afa60)
 
 
-![Screenshot_20240823_171216](https://github.com/user-attachments/assets/d7f26fef-9562-4df0-b04e-32e7b4db9fd5)
+
+
