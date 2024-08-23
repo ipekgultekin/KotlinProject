@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -15,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -31,13 +33,11 @@ fun RegisterScreen(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp.dp
-    val screenHeight = configuration.screenHeightDp.dp
 
     val textSizeWelcome = 28.sp
     val textSizeLogin = 16.sp
     val textSizeForgotPassword = 14.sp
     val buttonSize = 50.dp
-
 
     Box(
         modifier = Modifier
@@ -54,7 +54,6 @@ fun RegisterScreen(navController: NavHostController) {
                 contentDescription = "Back"
             )
         }
-
 
         Column(
             modifier = Modifier
@@ -117,17 +116,24 @@ fun RegisterScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { Log.i("Register", "Name: $name, Email: $email, Password: $password") },
+                onClick = {
+                    if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                        navController.navigate("success")
+                    } else {
+                        Log.i("Register", "Name: $name, Email: $email, Password: $password")
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
-                    .height(buttonSize)
+                    .height(buttonSize),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFC0CB))
             ) {
                 Text(text = "Sign Up", fontSize = textSizeLogin)
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Or sign up with", fontSize = textSizeForgotPassword)
+            Text(text = "Or sign up with", fontSize = textSizeForgotPassword, fontWeight = FontWeight.Bold)
 
             Spacer(modifier = Modifier.height(16.dp))
 

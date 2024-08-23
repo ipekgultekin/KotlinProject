@@ -1,5 +1,3 @@
-package com.example.kotlinprojectloginpage
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +8,12 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.kotlinprojectloginpage.HomeScreen
 import com.example.kotlinprojectloginpage.ui.theme.KotlinProjectLoginPageTheme
+import com.example.kotlinprojectloginpage.SuccessScreen
+import com.example.kotlinprojectloginpage.LoginScreen
+import com.example.kotlinprojectloginpage.PasswordResetScreen
+import com.example.kotlinprojectloginpage.RegisterScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +25,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "home") { // Set HomeScreen as startDestination
+                    NavHost(navController = navController, startDestination = "home") {
                         composable("home") { HomeScreen(navController) }
                         composable("login") { LoginScreen(navController) }
                         composable("passwordReset") { PasswordResetScreen(navController) }
                         composable("register") { RegisterScreen(navController) }
+                        composable("success") { SuccessScreen("Operation successful!", navController) }
+
                     }
                 }
             }

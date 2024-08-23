@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -15,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -32,8 +34,8 @@ fun LoginScreen(navController: NavHostController) {
     val screenWidth = configuration.screenWidthDp.dp
 
     val textSizeWelcome = 28.sp
-    val textSizeLogin = 16.sp
-    val textSizeForgotPassword = 14.sp
+    val textSizeLogin = 20.sp
+    val textSizeForgotPassword = 18.sp
     val buttonSize = 50.dp
 
     Box(
@@ -55,7 +57,7 @@ fun LoginScreen(navController: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 48.dp), // Adds space for the back button
+                .padding(top = 48.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -68,16 +70,9 @@ fun LoginScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Welcome",
+                text = "Login to your account",
                 fontSize = textSizeWelcome,
                 fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "Login to your account",
-                fontSize = textSizeLogin
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -108,27 +103,35 @@ fun LoginScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { Log.i("Credential", "Email: $email Password: $password") },
+                onClick = {
+                    if (email.isNotEmpty() && password.isNotEmpty()) {
+                        navController.navigate("success")
+                    } else {
+                        Log.i("Credential", "Email: $email Password: $password")
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
-                    .height(buttonSize)
+                    .height(buttonSize),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFC0CB))
             ) {
                 Text(text = "Login", fontSize = textSizeLogin)
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Forgot Password?",
                 modifier = Modifier.clickable {
                     navController.navigate("passwordReset")
                 },
-                fontSize = textSizeForgotPassword
+                fontSize = textSizeForgotPassword,
+                fontWeight = FontWeight.Bold
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Or sign in with", fontSize = textSizeForgotPassword)
+            Text(text = "Or sign in with", fontSize = textSizeForgotPassword, fontWeight = FontWeight.Bold)
 
             Spacer(modifier = Modifier.height(16.dp))
 
