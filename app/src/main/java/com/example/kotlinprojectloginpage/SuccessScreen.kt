@@ -5,6 +5,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
@@ -34,7 +35,9 @@ fun SuccessScreen(navController: NavHostController) {
 
             Button(
                 onClick = { navController.popBackStack() },
-                modifier = Modifier.fillMaxWidth(0.9f)
+                modifier = Modifier.fillMaxWidth(0.9f),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFC0CB))
+
             ) {
                 Text(text = "Go Back")
             }

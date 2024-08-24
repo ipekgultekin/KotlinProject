@@ -46,7 +46,7 @@ fun HomeScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Hello",
+                text = "Hello!",
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -61,7 +61,7 @@ fun HomeScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Login ve Sign Up butonları
+        // Login and Sign up buton
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -71,7 +71,7 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth(0.8f)
                     .height(50.dp),
                 shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF89CFF0))
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFC0CB))
             ) {
                 Text(text = "Login", fontSize = 18.sp, color = Color.White, fontWeight = FontWeight.Bold)
             }
@@ -84,7 +84,7 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth(0.8f)
                     .height(50.dp),
                 shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF89CFF0))
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFC0CB))
             ) {
                 Text(text = "Sign Up", fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
