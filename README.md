@@ -1,5 +1,5 @@
 # Kotlin Project Login Page
-This project is a part of my volunteer internship at Yazılım.xyz. The main objective was to create a basic authentication flow using Kotlin and Jetpack Compose. The application includes a Home Screen, a Login Page, and a Register Page. Below are the key features and details of the project.
+This project is a part of my volunteer internship at Yazılım.xyz. The main objective was to create a basic authentication flow using Kotlin and Jetpack Compose. The application includes a Home Screen, a Login Page, a Register Page, and a Success Page. Below are the key features and details of the project.
 
 # Project Overview
 The KotlinProjectLoginPage is a simple yet effective demonstration of modern Android development practices using Kotlin and Jetpack Compose. The project primarily focuses on creating a smooth user authentication flow with a clean and responsive UI design.
