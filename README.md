@@ -15,9 +15,6 @@ The KotlinProjectLoginPage is a simple yet effective demonstration of modern And
 - **Android Studio:** The IDE used for the development of the project.
 
 # Screenshots
-![Screenshot_20240823_171130](https://github.com/user-attachments/assets/aee2d7b6-6943-41a4-9316-3142fd8edf80)
 
-![Screenshot_20240823_171144](https://github.com/user-attachments/assets/54935db0-b0ad-423c-a244-0e7ccbd6bf9e)
-
-![Screenshot_20240823_171216](https://github.com/user-attachments/assets/16733095-c428-4145-94c3-96cb85e75f7c)
+![Ekran görüntüsü 2024-08-24 160555](https://github.com/user-attachments/assets/af39397c-da6b-4dd8-ac64-ae1e77cabe16)
 
