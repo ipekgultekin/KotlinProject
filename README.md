@@ -8,6 +8,8 @@ The KotlinProjectLoginPage is a simple yet effective demonstration of modern And
 - **Home Screen:** The initial landing page that welcomes users and provides options to either log in or register a new account.
 - **Login Page:** A secure login interface that allows existing users to enter their credentials and access the application.
 - **Register Page:** A registration form for new users to create an account, including fields for name, email, and password.
+- **Forgot Password Page:** A dedicated page that allows users to reset their password by entering their email address.
+- **Success Page:** A confirmation page that users are redirected to after successfully registering or logging in, indicating that the authentication process was completed successfully.
 
 # Technologies Used
 - **Kotlin:** The primary programming language used for developing the Android application.
